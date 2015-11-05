@@ -1,0 +1,100 @@
+<div class="tools">
+   <div class="calculate exclude"></div>
+    <div class="start exclude"></div>
+    <div class="end exclude"></div> 
+    <div class="pomiar exclude">
+    
+    <a class="reseter" href="#">start/reset pomiaru</a>
+    <a class="zoom-out" href="#">powiększ</a>
+    <a class="zoom-in" href="#">pomniejsz</a>
+    <div class="desc">Brak pomiaru, kliknij "start pomiaru" następnie  w dwóch punktach myszką w obszarze rzutu aby pomierzyć odległości i powierzchnię</div>
+</div>
+</div>
+
+<div class="projection-nav">
+   
+    <a data-id-to-switch="nav-list" class="tools-link switcher active" href="/rzut">Rzuty</a>
+    <a href="#"  data-id-to-switch="legend-list" class="switcher excluder">Legenda kolorów</a>
+     <a href="#"  data-id-to-switch="pomiar" class="switcher excluder">Pomiar</a>
+    <a href="#"  data-id-to-switch="svg-rule" class="switcher ruler">Linijka</a>
+    
+    
+    <?php /*<a href="#" data-id-to-switch="meble" class="tools-link switcher">Meble - parter projekt</a>
+    <a href="#" data-id-to-switch="co-inst" class="tools-link switcher">C0 - parter projekt</a>    
+     <a href="#" data-id-to-switch="inst" class="tools-link switcher">Instalacje - parter projekt</a>*/?>
+     
+    <?php $this->render('common/view/nav.phtml'); ?>    
+
+</div>
+
+<div class="legend exclude">
+
+    
+
+    <ul class="legend-list">
+        <li class="legend-item schody-nowe">schody wewnętrzne</li>
+        <li class="legend-item schody">schody zewnętrzne</li>
+        <li class="legend-item wywietrznik">wywietrznik</li>
+        <li class="legend-item dach">dach</li> 
+          
+        <li class="legend-item tlo">tło</li>  
+        <li class="legend-item drzwi">okna/drzwi</li> 
+        <li class="legend-item drzwi-wew">drzwi wewnętrzne</li>
+        <li class="legend-item nowe">nowe otwory</li> 
+
+        <li class="legend-item sciana">ściana</li>
+
+        <li class="legend-item posadzkowe">wypełnienie podposadzkowe</li>
+        <li class="legend-item komin">komin</li>
+        <li class="legend-item ziemia">ziemia</li>
+        
+        <li>
+            <svg viewBox="0 0 8 8" width="8" height="8">
+            <line x1="0" y1="0" x2="8" y2="0" stroke-width="8" stroke="#8A0829"/>
+            </svg> 
+            kanalizacja            
+        </li>
+        
+        <li>
+            <svg viewBox="0 0 8 8" width="8" height="8">
+            <line x1="0" y1="0" x2="8" y2="0" stroke-width="8" stroke="blue"/>
+            </svg> 
+            zimna woda            
+        </li>
+        
+        <li>
+            <svg viewBox="0 0 8 8" width="8" height="8">
+            <line x1="0" y1="0" x2="8" y2="0" stroke-width="8" stroke="orange"/>
+            </svg> 
+            centralne ogrzewanie            
+        </li>
+        
+        <li>
+            <svg viewBox="0 0 8 8" width="8" height="8">
+            <line x1="0" y1="0" x2="8" y2="0" stroke-width="8" stroke="red"/>
+            </svg> 
+            ciepła woda            
+        </li>
+        
+        <li>skala: 1px - 1cm</li>
+        <li>rzuty poziome: góra strony to północ</li>
+    </ul>
+
+</div>
+
+<svg  version="1.1"
+         baseProfile="full"
+         accesskey=""
+        class="svg-rule"
+         viewBox="0 0 800 800"
+         width="800" 
+         height="800">
+
+
+<line x1="400" y1="0" x2="400" y2="800" stroke-width="2" stroke="grey"/>
+<line x1="0" y1="400" x2="800" y2="400" stroke-width="2" stroke="grey"/>
+
+
+
+
+</svg>

@@ -1,0 +1,14 @@
+<section> 
+    <?php $this->render('projection/view/partial/tools.phtml'); ?>  
+    <div class="svg-screen"><span>Wybierz rzut z prawego/brązowego menu</span></div>     
+</section>
+<?php $this->ob(); ?>
+<script src="/js/mig/mig.canvas.view.js"></script>
+<script src="/js/mig/mig.ajax.js"></script>
+<script type="text/javascript">
+// <![CDATA[
+var cns = mig.canvas.view(window, {});
+mig.ajax(window, {callback:cns.setCanvas});   
+// ]]>
+</script>
+<?php $this->clean(); ?>    
