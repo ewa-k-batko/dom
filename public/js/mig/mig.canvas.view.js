@@ -2,7 +2,7 @@ var mig = mig || {};
 mig.canvas = mig.canvas || {};
 mig.canvas.view = function (window, confApp) {
     "use strict";
-    var jQuery = window.$j, root, confDef, conf,
+    var jQuery = window.$j, root, confDef, conf, ini = 0,
             int = function (s) {
                 return parseInt(s, 10);
             },
@@ -58,8 +58,12 @@ mig.canvas.view = function (window, confApp) {
                 start.css({top: conf.Y, left: conf.X});
                 end.css({top: conf.Ye, left: conf.Xe});
                 calculate.html('').css({top: conf.Y, left: conf.X, width: 0, height: 0});
-                desc.html('');
+                if(ini != 0) {
+                  desc.html('');  
+                }
+                
                 self.canv.css({transform: 'scale(' + 1 + ')', top: 0, left: 0});
+                ini++;
             };
 
 
@@ -67,26 +71,45 @@ mig.canvas.view = function (window, confApp) {
         e.stopPropagation();
 
         /*if (jQuery(this).hasClass('excluder')) {
-             
-            for (var i = 0; i < current.length; i++) {
+         
+         for (var i = 0; i < current.length; i++) {
+         
+         if (typeof current[i].box !== "undefined") {
+         current[i].box.hide();
+         }
+         if (typeof current[i].href !== "undefined") {
+         current[i].href.removeClass('active');
+         }
+         }
+         current = [];
+         }*/
 
-                if (typeof current[i].box !== "undefined") {
-                    current[i].box.hide();
-                }
-                if (typeof current[i].href !== "undefined") {
-                    current[i].href.removeClass('active');
-                }
-            }
-            current = [];
-        }*/
-        var el = jQuery('.' + jQuery(this).attr('data-id-to-switch'));
+        var what = jQuery(this).attr('data-id-to-switch'),
+                el = jQuery('.' + what);
         el.toggle();
         //current.push({box: el, href: jQuery(this)});
 
+
+
         if (el.is(":visible")) {
             jQuery(this).addClass('active');
+            if (what == 'pomiar') {
+                calculate.show();
+                desc.show();
+                start.show();
+                end.show();
+                reset();
+            }            
+            
         } else {
             jQuery(this).removeClass('active');
+            if (what == 'pomiar') {
+                calculate.hide();
+                desc.hide();
+                start.hide();
+                end.hide();
+            }
+
         }
 
         return false;

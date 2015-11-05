@@ -63,7 +63,7 @@
 .projection-page .legend {
   position: absolute;
   right: 0;
-  top: 220px;
+  top: 140px;
   width: 15%;
   z-index: 30;
   background-color: #ffffff;
@@ -145,7 +145,7 @@
 .projection-page .pomiar {
   position: absolute;
   right: 0;
-  top: 220px;
+  top: 140px;
   width: 15%;
   z-index: 30;
   background-color: #ffffff;
